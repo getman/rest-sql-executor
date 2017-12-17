@@ -2,6 +2,7 @@ package ru.aparfenov.webservice.rest;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import ru.aparfenov.webservice.db.OracleDaoBean;
 import ru.aparfenov.webservice.model.DbDao;
 
 import javax.ejb.EJB;
@@ -23,6 +24,10 @@ public class RestSqlService extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String query=req.getParameter("sql-query");
+//        logger.trace("query param sql-query:" + queryParam);
+//        System.out.println("query param sql-query:" + queryParam);
+        log("query param sql-query:" + query);
+        query = query != null ? query: "select * employee";
         if (logger.isDebugEnabled()) {
             logger.debug("SQL request is:" + query);
         }

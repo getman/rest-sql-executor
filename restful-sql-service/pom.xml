@@ -3,10 +3,16 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
+    <parent>
+        <groupId>ru.aparfenov.webservice</groupId>
+        <artifactId>sql-web-service</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <groupId>ru.aparfenov.webservice.rest</groupId>
     <artifactId>restful-sql-service</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+
     <dependencies>
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -33,7 +39,28 @@
             <artifactId>log4j-core</artifactId>
             <version>2.10.0</version>
         </dependency>
+        <dependency>
+            <groupId>ru.aparfenov.webservice.db</groupId>
+            <artifactId>db-dao</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
-
+    <build>
+        <finalName>main-servlet</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.1.1</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

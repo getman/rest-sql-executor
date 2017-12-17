@@ -3,22 +3,46 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>ru.aparfenov.webservice</groupId>
+        <artifactId>sql-web-service</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
 
     <groupId>ru.aparfenov.webservice.db</groupId>
     <artifactId>db-dao</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>ejb</packaging>
+
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ejb-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <ejbVersion>3.0</ejbVersion>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathLayoutType>custom</classpathLayoutType>
+                            <customClasspathLayout>${artifact.artifactId}.${artifact.extension}</customClasspathLayout>
+                        </manifest>
+                    </archive>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
     <dependencies>
         <dependency>
             <groupId>javax</groupId>
@@ -31,6 +55,5 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
-
 
 </project>
