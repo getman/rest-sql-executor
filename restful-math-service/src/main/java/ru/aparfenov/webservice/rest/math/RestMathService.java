@@ -18,7 +18,7 @@ import java.util.Map;
 /**
  * Created by AParfenov on 19.12.2017.
  */
-@WebServlet("/oper")
+@WebServlet("/math")
 public class RestMathService extends HttpServlet {
     @EJB
     private MathOperationsBean mathBean;
@@ -38,8 +38,9 @@ public class RestMathService extends HttpServlet {
         log("math oper parameters:" + parameters + ", oper type:" + operationType);
         String responce;
         if (!parameters.isEmpty()) {
-            mathBean.init(operationType, parameters);
-            responce = mathBean.performOperation();
+//            mathBean.init(operationType, parameters);
+            responce = mathBean.perform(operationType, parameters);
+            log("responce is:" + responce);
         } else {
             responce = "nothing";
         }

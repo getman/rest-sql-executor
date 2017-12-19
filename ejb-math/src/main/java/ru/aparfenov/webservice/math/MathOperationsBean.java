@@ -12,18 +12,12 @@ import java.util.Map;
  */
 @Stateless
 @Local
-//public class MathOperationsBean implements MathOperation {
 public class MathOperationsBean {
-    MathOperation mathOper;
     public MathOperationsBean() {
     }
 
-    public void init(String operType,Map parameters) {
-//        String operType = (String) parameters.get(MathOperation.TYPE_PARAM);
-        mathOper = MathOperationFactory.createOperationByParams(operType, parameters);
-    }
-
-    public String performOperation() {
+    public String perform(String operType, Map parameters) {
+        MathOperation mathOper = MathOperationFactory.createOperationByParams(operType, parameters);
         return mathOper.performOperation();
     }
 
