@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>ru.aparfenov.webservice.db</groupId>
-    <artifactId>db-dao</artifactId>
+    <artifactId>ejb-db-dao</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>ejb</packaging>
 

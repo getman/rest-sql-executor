@@ -9,26 +9,11 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <groupId>ru.aparfenov.webservice.rest</groupId>
-    <artifactId>restful-sql-service</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>restful-math-service</artifactId>
+    <version>1.0</version>
     <packaging>war</packaging>
 
     <dependencies>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-api</artifactId>
-            <version>7.0</version>
-        </dependency>
-        <dependency>
-            <groupId>ru.aparfenov.webservice</groupId>
-            <artifactId>model</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
@@ -40,13 +25,18 @@
             <version>2.10.0</version>
         </dependency>
         <dependency>
-            <groupId>ru.aparfenov.webservice.db</groupId>
-            <artifactId>ejb-db-dao</artifactId>
+            <groupId>ru.aparfenov.webservice.rest</groupId>
+            <artifactId>ejb-math</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>ru.aparfenov.webservice</groupId>
+            <artifactId>model</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
     <build>
-        <finalName>db-service</finalName>
+        <finalName>math-service</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -62,5 +52,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

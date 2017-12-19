@@ -10,9 +10,11 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>db-dao</module>
+        <module>ejb-db-dao</module>
+        <module>ejb-math</module>
         <module>model</module>
         <module>restful-sql-service</module>
+        <module>restful-math-service</module>
         <module>util</module>
     </modules>
 </project>

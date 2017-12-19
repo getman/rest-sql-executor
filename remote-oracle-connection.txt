@@ -1,0 +1,2 @@
+
+-firewall: open incoming connection for 1521 port
