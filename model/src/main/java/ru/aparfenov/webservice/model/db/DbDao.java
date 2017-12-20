@@ -1,4 +1,4 @@
-package ru.aparfenov.webservice.model;
+package ru.aparfenov.webservice.model.db;
 
 import javax.ejb.Local;
 

@@ -4,20 +4,9 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          id="WebApp_ID" version="3.1">
     <display-name>SqlRestfulService</display-name>
-    <servlet>
-        <!-- class name -->
-        <servlet-name>RestSqlService</servlet-name>
-        <!-- package-->
-        <servlet-class>ru.aparfenov.webservice.rest.RestSqlService</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>RestSqlService</servlet-name>
-        <!-- address -->
-        <url-pattern>/sql</url-pattern>
-    </servlet-mapping>
     <ejb-local-ref>
         <ejb-ref-name>DbDao</ejb-ref-name>
         <ejb-ref-type>Session</ejb-ref-type>
-        <local>ru.aparfenov.webservice.model.DbDao</local>
+        <local>ru.aparfenov.webservice.model.db.DbDao</local>
     </ejb-local-ref>
 </web-app>

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import ru.aparfenov.webservice.math.MathOperationsBean;
-import ru.aparfenov.webservice.model.MathOperation;
+import ru.aparfenov.webservice.model.math.MathOperation;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -18,7 +18,7 @@ import java.util.Map;
 /**
  * Created by AParfenov on 19.12.2017.
  */
-@WebServlet("/math")
+@WebServlet("/oper")
 public class RestMathService extends HttpServlet {
     @EJB
     private MathOperationsBean mathBean;
@@ -38,14 +38,13 @@ public class RestMathService extends HttpServlet {
         log("math oper parameters:" + parameters + ", oper type:" + operationType);
         String responce;
         if (!parameters.isEmpty()) {
-//            mathBean.init(operationType, parameters);
             responce = mathBean.perform(operationType, parameters);
             log("responce is:" + responce);
         } else {
             responce = "nothing";
         }
         resp.setContentType("text/html; charset=utf-8");
-        resp.getWriter().println(responce);
+        resp.getWriter().write(responce);
         if (logger.isTraceEnabled()) {
             logger.trace("response is: " + responce);
         }

@@ -1,7 +1,7 @@
 package ru.aparfenov.webservice.math;
 
-import ru.aparfenov.webservice.model.MathOperation;
-import ru.aparfenov.webservice.model.MathOperationFactory;
+import ru.aparfenov.webservice.model.math.MathOperation;
+import ru.aparfenov.webservice.model.math.MathOperationFactory;
 
 import javax.ejb.Local;
 import javax.ejb.Stateless;

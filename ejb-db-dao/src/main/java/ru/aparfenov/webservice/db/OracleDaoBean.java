@@ -1,14 +1,11 @@
 package ru.aparfenov.webservice.db;
 
-import ru.aparfenov.webservice.model.DbDao;
+import ru.aparfenov.webservice.model.db.DbDao;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import javax.ejb.Stateless;
 import javax.sql.DataSource;
-import java.io.BufferedOutputStream;
-import java.io.OutputStream;
-import java.io.PrintWriter;
 import java.sql.*;
 import java.util.Locale;
 
@@ -37,7 +34,6 @@ public class OracleDaoBean implements DbDao {
             Locale.setDefault(Locale.ENGLISH);
             this.conn = myDs.getConnection();
             Statement ps = conn.createStatement();
-//            ResultSet rs = ps.executeQuery("select * from dual");
             ResultSet rs = ps.executeQuery(sqlQuery);
             while (rs.next()) {
                 result.append(rs.getString(1));

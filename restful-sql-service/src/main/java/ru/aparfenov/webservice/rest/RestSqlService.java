@@ -2,7 +2,7 @@ package ru.aparfenov.webservice.rest;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import ru.aparfenov.webservice.model.DbDao;
+import ru.aparfenov.webservice.model.db.DbDao;
 
 import javax.ejb.EJB;
 import javax.servlet.annotation.WebServlet;
