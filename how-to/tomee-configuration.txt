@@ -1,0 +1,30 @@
+*tomee webprofile distributive will be used
+
+start up
+-unpack webprofile archive - tomee
+-specify runnig the port if 8080 is already occupied:
+	server.xml
+	...
+	<Connector port="8081" ...
+-execute script bin/startup.bat
+-see tomee web console at http://localhost:8081/
+
+configure datasource (Oracle)
+-install Oracle XE
+-create database with default 'xe' sid 
+-copy ojdbc6.jar driver into tommee /lib directory
+-specify datasource
+	tomee.xml:
+	<Resource id="myOracleDataSource" type="DataSource">
+	    JdbcDriver oracle.jdbc.OracleDriver
+	    JdbcUrl jdbc:oracle:thin:@localhost:1521:xe
+	    Password 12345678
+	    UserName aparfenov
+	</Resource>
+-inject datasource in code
+	@Stateless
+	public class OracleDaoBean implements DbDao {
+	    @Resource(name="myOracleDataSource")
+	    private DataSource myDs;
+	    ...
+	    Conncetion c = myDs.getConnection();
